@@ -154,8 +154,8 @@ def get_instance_info(instance, sep=':'):
 
 def get_conf(host, port):
     conf = {
-        'username': "ken",
-        'password': 'guoguofei@dba123',
+        'username': "root",
+        'password': 'root,
         'host': host,
         'port': port,
     }
@@ -189,18 +189,6 @@ def main():
     }
 
     create_m_s(topology)
-    
-    slave_conf = {
-        'username': "ken",
-        'password': 'guoguofei@dba123',
-        'host': '10.0.11.100',
-        'port': '3306',
-        'database': '',
-        'charset': 'utf8',
-    }
-
-    '''
-    '''
 
 
 if __name__ == '__main__':
