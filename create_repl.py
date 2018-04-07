@@ -104,8 +104,8 @@ class CreateRepl(object):
 
         change_master_sql = '''
             CHANGE MASTER TO MASTER_HOST='{host}',
-                MASTER_USER='eleme_slave',
-                MASTER_PASSWORD='49T9N2lq0yQQKT9U',
+                MASTER_USER='HH',
+                MASTER_PASSWORD='oracle12',
                 MASTER_PORT={port},
                 MASTER_DELAY={delay},
                 MASTER_LOG_FILE='{binlog}',
@@ -154,8 +154,8 @@ def get_instance_info(instance, sep=':'):
 
 def get_conf(host, port):
     conf = {
-        'username': "root",
-        'password': 'root,
+        'username': 'HH',
+        'password': 'oracle12',
         'host': host,
         'port': port,
     }
@@ -179,12 +179,9 @@ def create_m_s(topology):
 
 def main():
     topology = {
-        '10.22.0.26:3306': {
-            '10.21.248.28:3306': {},
-            '10.200.148.38:3306': {
-                '10.200.164.14:3306': {},
-                '10.0.133.66:3316': {},
-            },
+        '127.0.0.1:3307': {
+            '127.0.0.1:3308': {},
+            '127.0.0.1:3309': {},
         },
     }
 
