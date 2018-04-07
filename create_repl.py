@@ -104,8 +104,8 @@ class CreateRepl(object):
 
         change_master_sql = '''
             CHANGE MASTER TO MASTER_HOST='{host}',
-                MASTER_USER='HH',
-                MASTER_PASSWORD='oracle12',
+                MASTER_USER='{username}',
+                MASTER_PASSWORD='{password}',
                 MASTER_PORT={port},
                 MASTER_DELAY={delay},
                 MASTER_LOG_FILE='{binlog}',
@@ -113,6 +113,8 @@ class CreateRepl(object):
         '''.format(
             host = self.master_conf['host'],
             port = self.master_conf['port'],
+            username = self.master_conf['username'],
+            password = self.master_conf['password'],
             binlog = master_info['File'],
             pos = master_info['Position'],
             delay = delay_time,
